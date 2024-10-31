@@ -2,7 +2,7 @@ import { assets } from "@/Assets/assets";
 import Sidebar from "@/components/AdminComponents/Sidebar";
 import Image from "next/image";
 
-export default function Layout({childern}){
+export default function Layout({children}){
     return(
         <>
         <div className="flex">
@@ -13,7 +13,7 @@ export default function Layout({childern}){
                     <Image src={assets.profile_icon} width={40} alt=""/>
 
                 </div>
-                {childern}
+                {children}
             </div>
         </div>
         
