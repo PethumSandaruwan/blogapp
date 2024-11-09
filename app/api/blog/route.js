@@ -3,6 +3,8 @@ import BlogModel from "@/lib/models/blogModel";
 import{writeFile} from 'fs/promises'
 import { title } from "process";
 
+const fs = require('fs')
+
 const { NextResponse } = require("next/server")
 
 const LoadDB = async ()=>{
@@ -53,3 +55,17 @@ console.log("Blog Saved")
 
     return NextResponse.json({success:true,msg:"Blog Added"})
 }
+
+//API Endpoint to delete blogs
+export async function DELETE(request) {
+    const id = await request.nextUrl.searchParams.get('id');
+    const blog = await BlogModel.findById(id);
+    fs.unlink(`./public${blog.image}`,()=>{})
+    await BlogModel.findByIdAndDelete(id) 
+    return NextResponse.json({msg:"blog deleted"})
+    
+    
+}
+
+
+
