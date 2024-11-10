@@ -12,7 +12,7 @@ const page = () => {
   title :"",
   description:"",
   category:"Startup",
-  author:"Alex Bennett",
+  author:"Pethum Sandaruwan",
   authorImg:"/author_Img.png"
 })
 
@@ -41,7 +41,7 @@ const page = () => {
         title :"",
         description:"",
         category:"Startup",
-        author:"Alex Bennett",
+        author:"Pethum Sandaruwan",
         authorImg:"/author_Img.png"
       });
 
